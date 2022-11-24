@@ -2,6 +2,12 @@
 #define PRINCIPALE_H
 
 #include <QMainWindow>
+#include <QNetworkReply>
+#include <QNetworkAccessManager>
+#include <QNetworkRequest>
+#include <QUrl>
+#include <QtGui>
+#include <openwm.h>
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class principale; }
@@ -17,5 +23,10 @@ public:
 
 private:
     Ui::principale *ui;
+    openwm afficheur;
+
+private slots:
+    void changer_url();
+    void owm_afficher();
 };
 #endif // PRINCIPALE_H
