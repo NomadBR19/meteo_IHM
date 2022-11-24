@@ -19,7 +19,9 @@ private:
 public:
     openwm();
     void set_url(QString url);
-    double get_owm(QString ville);
+    double get_temp(QString ville);
+    QString get_temps(QString ville);
+    QString get_ant(QString ville);
     QByteArray get_jowm(QString ville);
 };
 

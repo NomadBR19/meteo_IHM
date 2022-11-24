@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>800</width>
-    <height>600</height>
+    <width>397</width>
+    <height>291</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -20,7 +20,7 @@
       <x>30</x>
       <y>49</y>
       <width>160</width>
-      <height>51</height>
+      <height>41</height>
      </rect>
     </property>
     <layout class="QVBoxLayout" name="verticalLayout">
@@ -32,7 +32,41 @@
       </widget>
      </item>
      <item>
-      <widget class="QLineEdit" name="urlEdit"/>
+      <widget class="QComboBox" name="villeBox">
+       <property name="editable">
+        <bool>true</bool>
+       </property>
+       <item>
+        <property name="text">
+         <string>Paris</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Londres</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Berlin</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Kiev</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Varsovie</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Stockholm</string>
+        </property>
+       </item>
+      </widget>
      </item>
     </layout>
    </widget>
@@ -42,7 +76,7 @@
       <x>210</x>
       <y>50</y>
       <width>160</width>
-      <height>51</height>
+      <height>41</height>
      </rect>
     </property>
     <layout class="QVBoxLayout" name="verticalLayout_2">
@@ -61,6 +95,9 @@
        <property name="buttonSymbols">
         <enum>QAbstractSpinBox::NoButtons</enum>
        </property>
+       <property name="minimum">
+        <double>-100.000000000000000</double>
+       </property>
       </widget>
      </item>
     </layout>
@@ -68,8 +105,8 @@
    <widget class="QPushButton" name="pushButton">
     <property name="geometry">
      <rect>
-      <x>30</x>
-      <y>110</y>
+      <x>70</x>
+      <y>120</y>
       <width>80</width>
       <height>24</height>
      </rect>
@@ -78,13 +115,106 @@
      <string>Afficher</string>
     </property>
    </widget>
+   <widget class="QWidget" name="verticalLayoutWidget_3">
+    <property name="geometry">
+     <rect>
+      <x>210</x>
+      <y>110</y>
+      <width>160</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <layout class="QVBoxLayout" name="verticalLayout_3">
+     <item>
+      <widget class="QLabel" name="label_3">
+       <property name="text">
+        <string>Temps</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QLineEdit" name="tempEdit">
+       <property name="enabled">
+        <bool>true</bool>
+       </property>
+       <property name="readOnly">
+        <bool>true</bool>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </widget>
+   <widget class="QLabel" name="label_4">
+    <property name="geometry">
+     <rect>
+      <x>30</x>
+      <y>20</y>
+      <width>341</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>METEO ET CLIMAT (API OpenWeatherMap) :</string>
+    </property>
+   </widget>
+   <widget class="QWidget" name="verticalLayoutWidget_4">
+    <property name="geometry">
+     <rect>
+      <x>60</x>
+      <y>180</y>
+      <width>281</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <layout class="QVBoxLayout" name="verticalLayout_4">
+     <item>
+      <widget class="QLabel" name="label_5">
+       <property name="text">
+        <string>Antenne</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QLineEdit" name="antenneEdit">
+       <property name="enabled">
+        <bool>true</bool>
+       </property>
+       <property name="layoutDirection">
+        <enum>Qt::LeftToRight</enum>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignCenter</set>
+       </property>
+       <property name="readOnly">
+        <bool>true</bool>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </widget>
+   <widget class="QLabel" name="cordon">
+    <property name="geometry">
+     <rect>
+      <x>60</x>
+      <y>230</y>
+      <width>281</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+    </property>
+   </widget>
   </widget>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>800</width>
+     <width>397</width>
      <height>21</height>
     </rect>
    </property>
@@ -100,28 +230,12 @@
    <slot>owm_afficher()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>69</x>
-     <y>148</y>
+     <x>109</x>
+     <y>158</y>
     </hint>
     <hint type="destinationlabel">
      <x>148</x>
      <y>177</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>urlEdit</sender>
-   <signal>textChanged(QString)</signal>
-   <receiver>principale</receiver>
-   <slot>changer_url()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>134</x>
-     <y>109</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>167</x>
-     <y>44</y>
     </hint>
    </hints>
   </connection>
